@@ -42,7 +42,7 @@ def conversion_romano_to_numero(romano):
     letra_3 = 10
     letra_4 = 50
     letra_5 = 100
-    acumulador = 0
+    acumulador = 0 
     
     for x in romano:
     
@@ -57,7 +57,15 @@ def conversion_romano_to_numero(romano):
         if x == "C":
             lista_decimal.append(letra_5)
     
-    for i in lista_decimal:
-        acumulador = acumulador + i
+    for i in range(len(lista_decimal)):
+        
+        if i >= len(lista_decimal) - 1: 
+            acumulador = acumulador + lista_decimal[i] 
+            return acumulador
+        if lista_decimal[i] < lista_decimal[i + 1]:
+                acumulador += lista_decimal[i + 1]  - lista_decimal[i] 
+                i += 1
+                continue
+        acumulador = acumulador + lista_decimal[i] 
     
     return acumulador
