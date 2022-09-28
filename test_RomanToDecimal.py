@@ -33,7 +33,7 @@ class TestRomanToNumber(unittest.TestCase):
         self.assertEqual(roman_number, 7)
 
     def test_8(self):
-        roman_number = conversion_romano_to_numero("XVIII")
+        roman_number = conversion_romano_to_numero("XIII")
         self.assertEqual(roman_number, 8)
 
     def test_9(self):

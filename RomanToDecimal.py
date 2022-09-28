@@ -34,18 +34,19 @@
                 a = +conversion_romano_to_numero(i + 1)
  """
 
+
 def conversion_romano_to_numero(romano):
-    
+
     lista_decimal = []
     letra_1 = 1
     letra_2 = 5
     letra_3 = 10
     letra_4 = 50
     letra_5 = 100
-    acumulador = 0 
-    
+    acumulador = 0
+
     for x in romano:
-    
+
         if x == "I":
             lista_decimal.append(letra_1)
         if x == "V":
@@ -56,16 +57,20 @@ def conversion_romano_to_numero(romano):
             lista_decimal.append(letra_4)
         if x == "C":
             lista_decimal.append(letra_5)
-    
+
     for i in range(len(lista_decimal)):
-        
-        if i >= len(lista_decimal) - 1: 
-            acumulador = acumulador + lista_decimal[i] 
-            return acumulador
-        if lista_decimal[i] < lista_decimal[i + 1]:
-                acumulador += lista_decimal[i + 1]  - lista_decimal[i] 
+
+        #if i >= len(lista_decimal) - 1:
+        #   acumulador = acumulador + lista_decimal[i]
+        #  return acumulador
+        try:
+            if lista_decimal[i] < lista_decimal[i + 1]:
+                acumulador += lista_decimal[i + 1] - lista_decimal[i]
                 i += 1
                 continue
-        acumulador = acumulador + lista_decimal[i] 
-    
+        except IndexError:
+            acumulador = acumulador + lista_decimal[i]
+            return acumulador
+        acumulador = acumulador + lista_decimal[i]
+
     return acumulador
