@@ -1,43 +1,5 @@
-def funcion_roman(x, y):
-    roman_5 = "V"
-    roman_10 = "X"
-    rto = ""
-
-    if 0 < y <= 3:
-        for digit in range(y):
-            rto = x + "I"
-    if y == 4:
-        rto = "IV"
-    if y == 5:
-        rto = x + roman_5
-    if 6 <= y <= 8:
-        for digit in range(y - 5):
-            jose = + "I"
-        rto = x + roman_5 + jose
-    if y == 9:
-        rto = "I" + roman_10
-    if 30 <= y <= 33:
-        rto = x
-
-    return rto
-
-
-def convert_decimal_to_roman(decimal_number):  #x =  roman e y = decimal_number
-    roman = ""
-    if 1 <= decimal_number <= 9:
-        roman = ""
-        a = funcion_roman(roman, decimal_number)
-    elif 10 <= decimal_number <= 19:
-        roman = "X"
-        a = funcion_roman(roman)
-    elif 20 <= decimal_number <= 29:
-        roman = "XX"
-        a = funcion_roman(roman)
-    return a
-
 
 def convert_decimal_to_roman(decimal_number):
-    roman_5 = "V"
     resto = decimal_number % 10
     resto_entero = decimal_number // 10
     rto_1 = ""
@@ -85,9 +47,6 @@ def convert_decimal_to_roman(decimal_number):
         if decimal_number == 100:
             rto = "C"
     elif resto_entero != 0 or resto_entero == 0:
-        """ if 0 < decimal_number or resto <= 3:
-            for digit in range(decimal_number):
-                rto_1 =+ "I" """
         if decimal_number == 1 or resto == 1:
             rto_1 = "I"
         if decimal_number == 2 or resto == 2:
@@ -104,10 +63,6 @@ def convert_decimal_to_roman(decimal_number):
             rto_1 = "VII"
         if decimal_number == 8 or resto == 8:
             rto_1 = "VIII"
-        """ if 6 <= resto_entero= 8:
-            for digit in range(resto_entero):
-                a =+ "I"
-            rto_1 = roman_5 + a  """
         if decimal_number == 9 or resto == 9:
             rto_1 = "IX"
     return rto + rto_1
